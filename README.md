@@ -7,7 +7,7 @@
 - **프레임워크**: [Next.js](https://nextjs.org) (App Router)
 - **언어**: TypeScript
 - **스타일링**: Tailwind CSS
-- **DB / ORM**: SQLite + [Prisma](https://www.prisma.io)
+- **DB / ORM**: PostgreSQL + [Prisma](https://www.prisma.io)
 - **인증**: [Auth.js (NextAuth v5)](https://authjs.dev) - Credentials(아이디/비밀번호) 로그인
 - **Lint**: ESLint
 
@@ -54,12 +54,15 @@ linknamu/
 
 ## 시작하기
 
+로컬에 PostgreSQL이 필요합니다 (Docker, 로컬 설치, 또는 Neon/Vercel Postgres 등 무료 플랜 모두 가능).
+
 ```bash
 # 의존성 설치
 npm install
 
 # .env 파일 생성 (.env.example 참고)
 cp .env.example .env
+# DATABASE_URL은 사용할 Postgres 접속 정보로 변경
 # AUTH_SECRET은 아래 명령어로 생성한 값을 넣어주세요
 openssl rand -base64 32
 
@@ -71,3 +74,9 @@ npm run dev
 ```
 
 브라우저에서 [http://localhost:3000](http://localhost:3000) 으로 접속하면 확인할 수 있습니다.
+
+## 배포 (Vercel)
+
+1. Vercel 프로젝트 **Settings → Environment Variables** 에 `DATABASE_URL`(Postgres 접속 정보), `AUTH_SECRET`을 등록합니다.
+2. **Settings → Build & Development Settings** 의 Build Command는 Override 없이 기본값(자동 감지된 `next build`)을 사용하거나, `package.json`에 정의된 `vercel-build` 스크립트(`prisma generate && prisma migrate deploy && next build`)를 그대로 사용하면 됩니다. 이 스크립트는 배포할 때마다 최신 마이그레이션을 DB에 자동 반영합니다.
+3. Deploy 하면 끝입니다.
