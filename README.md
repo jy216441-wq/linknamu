@@ -1,5 +1,11 @@
-# Welcome to GitHub Desktop!
+# 링크나무
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+링크나무는 여러 개의 링크를 한 곳에 모아 공유할 수 있는 프로젝트입니다.
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+## 소개
+
+이 저장소는 링크나무 프로젝트의 소스 코드와 문서를 관리합니다. 현재는 초기 설정 단계이며, 기능이 추가될 때마다 이 README도 함께 업데이트할 예정입니다.
+
+## 시작하기
+
+프로젝트 구조와 실행 방법은 추후 추가될 예정입니다.
