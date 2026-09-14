@@ -25,7 +25,7 @@ export default function Home() {
       <img
         src={profile.image}
         alt={profile.name}
-        className="h-24 w-24 rounded-full object-cover"
+        className="h-36 w-36 rounded-full object-cover"
       />
 
       <div className="text-center">
@@ -33,7 +33,7 @@ export default function Home() {
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{profile.bio}</p>
       </div>
 
-      <div className="flex w-full flex-col gap-3">
+      <div className="flex w-full flex-col gap-5">
         {links.map((link) => (
           <a
             key={link.title}
