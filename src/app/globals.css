@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-bg-start: #f8fafc;
+  --color-sky-bg-end: #e0f2fe;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--color-sky-bg-start), var(--color-sky-bg-end));
+  color: #1e293b;
+}
+
+@layer components {
+  .form-input {
+    @apply rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-sky-500;
+  }
+}
