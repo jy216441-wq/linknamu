@@ -40,10 +40,17 @@ linknamu/
 └─ package.json
 ```
 
+## 핵심 기능
+
+- **프로필**: 이름, 한 줄 소개, 프로필 사진을 대시보드에서 등록/수정
+- **링크 카드**: 대시보드에서 SNS·블로그 링크를 추가/삭제, 공개 페이지(`/{username}`)에 카드로 노출
+- **다크모드**: 우측 상단 토글로 라이트/다크 화면 전환 (localStorage에 저장)
+- **클릭 수 집계**: 공개 페이지의 링크는 `/r/{id}` 리다이렉트를 거치며 클릭 시마다 카운트, 대시보드에서 확인 가능
+
 ## 데이터 모델
 
-- **User**: username, passwordHash, name, bio 등 프로필 정보
-- **Link**: title, url, order 등 사용자가 등록한 링크 정보 (User와 1:N)
+- **User**: username, passwordHash, name, bio, image 등 프로필 정보
+- **Link**: title, url, order, clicks 등 사용자가 등록한 링크 정보 (User와 1:N)
 
 ## 인증 흐름
 
